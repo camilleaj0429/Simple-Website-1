@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<!--
+Author: Jonah Reisenauer
+Date: November 4, 2026
+Page: About Us & Contact / about.html
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Scout Motors | About & Contact</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #E9EDF0;
+    color: #17191C;
+    line-height: 1.5;
+}
+
+/* HEADER AND NAVIGATION */
+header {
+    background: #172B40;
+    color: white;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #8FC3E5;
+}
+
+/* HERO SECTION */
+.hero {
+    background:
+        linear-gradient(rgba(15,30,45,.65), rgba(15,30,45,.75)),
+        url("https://images.ctfassets.net/bi0eniwfxrs8/nHdl9XrNvcI7TD8mhfr4M/fe07655eb709617549ba2385f95978a2/Scout_Traveler_off_road_EXT_1.jpg?h=1080&w=1920");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.hero h1 {
+    font-size: 43px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: auto;
+    font-size: 17px;
+}
+
+.accent-line {
+    width: 75px;
+    height: 4px;
+    background: #76A9D0;
+    margin: 15px auto;
+}
+
+/* SECTION HEADINGS */
+.section-heading {
+    text-align: center;
+    padding: 30px 20px 18px;
+}
+
+.section-heading h2 {
+    font-size: 31px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #172B40;
+}
+
+.section-heading p {
+    color: #606A73;
+    margin-top: 8px;
+}
+
+/* ORIGIN STORY SECTION */
+.origin-container {
+    max-width: 900px;
+    margin: 0 auto 30px;
+    background: white;
+    padding: 30px 35px;
+    border-radius: 9px;
+    box-shadow: 0 5px 18px rgba(20,35,50,.08);
+}
+
+.origin-container p {
+    color: #454E57;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+/* TEAM GRID (NO IMAGES) */
+.team-grid {
+    max-width: 1150px;
+    margin: auto;
+    padding: 10px 25px 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.team-card {
+    background: white;
+    border-radius: 9px;
+    padding: 30px 25px;
+    box-shadow: 0 5px 18px rgba(20,35,50,.10);
+    transition: .3s;
+    text-align: left;
+    border-top: 4px solid #315F83;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+.team-card h3 {
+    font-size: 21px;
+    color: #172B40;
+    margin-bottom: 6px;
+}
+
+.team-title {
+    color: #315F83;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.team-card p {
+    color: #606A73;
+    font-size: 14px;
+}
+
+/* CONTACT & HOURS SECTION */
+.contact-section {
+    max-width: 1150px;
+    margin: 0 auto 40px;
+    padding: 0 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.contact-card, .hours-card {
+    background: white;
+    padding: 35px;
+    border-radius: 9px;
+    box-shadow: 0 5px 18px rgba(20,35,50,.08);
+}
+
+.contact-card h3, .hours-card h3 {
+    font-size: 22px;
+    color: #172B40;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #172B40;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #CCD3D8;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #F8FAFB;
+    font-size: 14px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.submit-btn {
+    background: #315F83;
+    color: white;
+    border: none;
+    padding: 11px 22px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: #172B40;
+}
+
+.contact-details-list {
+    margin-top: 15px;
+    list-style: none;
+    color: #454E57;
+}
+
+.contact-details-list li {
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.contact-details-list strong {
+    color: #172B40;
+}
+
+.contact-details-list a {
+    color: #315F83;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-details-list a:hover {
+    text-decoration: underline;
+}
+
+.hours-list {
+    list-style: none;
+    color: #454E57;
+}
+
+.hours-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 9px 0;
+    border-bottom: 1px solid #E9EDF0;
+    font-size: 14px;
+}
+
+/* FAQ SECTION */
+.faq-section {
+    max-width: 1150px;
+    margin: 0 auto 50px;
+    padding: 0 25px;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.faq-item {
+    background: white;
+    padding: 25px;
+    border-radius: 9px;
+    box-shadow: 0 3px 12px rgba(20,35,50,.09);
+}
+
+.faq-item h4 {
+    font-size: 16px;
+    color: #172B40;
+    margin-bottom: 8px;
+}
+
+.faq-item p {
+    color: #606A73;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* FOOTER */
+footer {
+    background: #111B25;
+    color: #DCEAF3;
+    text-align: center;
+    padding: 25px 20px;
+}
+
+footer h3 {
+    letter-spacing: 3px;
+}
+
+footer p {
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+footer a {
+    color: #8FC3E5;
+    text-decoration: none;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media(max-width: 750px) {
+    header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0 6px;
+        font-size: 12px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">SCOUT MOTORS</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="page2.html">Products</a>
+        <a href="about.html">About & Contact</a>
+        <a href="https://www.scoutmotors.com/" target="_blank">Official Website</a>
+    </nav>
+</header>
+
+<main>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <h1>About & Contact Us</h1>
+    <div class="accent-line"></div>
+
+    <p>
+        Learn more about the vision behind Scout Motors, meet our engineering team,
+        and get in touch with our official channels.
+    </p>
+</section>
+
+<!-- ORIGIN STORY -->
+<section>
+    <div class="section-heading">
+        <h2>The Origin Story</h2>
+        <div class="accent-line"></div>
+        <p>Reviving an American automotive icon for the modern electric age.</p>
+    </div>
+
+    <div class="origin-container">
+        <p>
+            The Scout legacy began decades ago as a rugged utility vehicle designed to conquer the toughest terrain and tackle everyday work with ease. Rooted in that pioneering spirit, Scout Motors was established to reimagine these legendary all-terrain capabilities through cutting-edge, sustainable electric vehicle engineering.
+        </p>
+        <p>
+            Our founders and engineering groups came together with a shared ambition: to build durable, versatile vehicles like the Traveler SUV and Terra truck that honor classic design while integrating next-generation technology. From meticulous data verification to robust system architecture, every vehicle is built to prepare drivers for the journey ahead.
+        </p>
+    </div>
+</section>
+
+<!-- MEET THE TEAM -->
+<section>
+    <div class="section-heading">
+        <h2>Meet The Team</h2>
+        <div class="accent-line"></div>
+        <p>The engineering professionals driving innovation at Scout Motors.</p>
+    </div>
+
+    <div class="team-grid">
+        <!-- AMELIA JOHNSON -->
+        <div class="team-card">
+            <h3>Amelia Johnson</h3>
+            <div class="team-title">Data Analysis & Verification Engineer</div>
+            <p>
+                Amelia oversees performance data modeling, testing validation, and analytical verification to ensure optimal system accuracy and safety across all platforms.
+            </p>
+        </div>
+
+        <!-- JONAH REISENAUER -->
+        <div class="team-card">
+            <h3>Jonah Reisenauer</h3>
+            <div class="team-title">Main Systems Engineer</div>
+            <p>
+                Jonah manages core vehicle architecture and hardware-software integration, anchoring the technical framework required for peak performance.
+            </p>
+        </div>
+
+        <!-- CAMILLE JOHNSON -->
+        <div class="team-card">
+            <h3>Camille Johnson</h3>
+            <div class="team-title">IT Support Specialist</div>
+            <p>
+                Camille coordinates internal network reliability, digital tools infrastructure, and technical operations support to keep workflows running seamlessly.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT FORM & DETAILS -->
+<section>
+    <div class="section-heading">
+        <h2>Get In Touch</h2>
+        <div class="accent-line"></div>
+        <p>Reach out to Scout Motors with your questions or inquiries.</p>
+    </div>
+
+    <div class="contact-section">
+        <!-- CONTACT FORM -->
+        <div class="contact-card">
+            <h3>Send Us a Message</h3>
+            <form>
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="name@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="How can we assist you today?" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+
+        <!-- OFFICIAL CONTACT DETAILS -->
+        <div class="contact-card">
+            <h3>Official Corporate Contact</h3>
+            <p style="color: #606A73; font-size: 14px; margin-bottom: 15px;">
+                Connect with Scout Motors through our official headquarters and digital channels.
+            </p>
+
+            <ul class="contact-details-list">
+                <li><strong>Corporate Headquarters:</strong> 1901 N Greenwood St, Tysons, VA 22102</li>
+                <li><strong>Official Website:</strong> <a href="https://www.scoutmotors.com/" target="_blank">www.scoutmotors.com</a></li>
+                <li><strong>Customer Support:</strong> <a href="https://www.scoutmotors.com/contact" target="_blank">scoutmotors.com/contact</a></li>
+                <li><strong>Social Media:</strong> 
+                    <a href="https://www.instagram.com/scoutmotors" target="_blank">Instagram</a> | 
+                    <a href="https://www.facebook.com/scoutmotors" target="_blank">Facebook</a> | 
+                    <a href="https://www.linkedin.com/company/scoutmotors" target="_blank">LinkedIn</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- HOURS OF OPERATION & FAQ -->
+<section>
+    <div class="section-heading">
+        <h2>Hours & FAQ</h2>
+        <div class="accent-line"></div>
+        <p>Check our operating schedule and explore common questions.</p>
+    </div>
+
+    <div class="contact-section" style="margin-bottom: 25px;">
+        <!-- HOURS OF OPERATION -->
+        <div class="hours-card">
+            <h3>Hours of Operation</h3>
+            <ul class="hours-list">
+                <li><span>Monday – Friday:</span> <span>8:00 AM – 6:00 PM EST</span></li>
+                <li><span>Saturday:</span> <span>9:00 AM – 4:00 PM EST</span></li>
+                <li><span>Sunday:</span> <span>Closed</span></li>
+            </ul>
+        </div>
+
+        <!-- VISITOR INFO -->
+        <div class="hours-card">
+            <h3>Visitor Information</h3>
+            <p style="color: #606A73; font-size: 14px; margin-top: 10px;">
+                Our corporate and engineering teams operate during standard business hours. For specific vehicle reservation inquiries, technical specifications, or customer assistance, please visit the official Scout Motors portal or use our contact form.
+            </p>
+        </div>
+    </div>
+
+    <!-- FAQ GRID -->
+    <div class="faq-section">
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h4>What powertrain options are available?</h4>
+                <p>Scout vehicles offer both all-electric configurations and the Harvester range-extender option to support extended driving ranges.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How can I reserve a Scout Traveler or Terra?</h4>
+                <p>Reservations can be placed securely online by visiting the official Scout Motors website and selecting your preferred configuration.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Where are Scout vehicles manufactured?</h4>
+                <p>Scout vehicles are built in the United States at our dedicated production facility located in Blythewood, South Carolina.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <h3>SCOUT MOTORS</h3>
+
+    <p>Built for the Journey. Ready for Anything.</p>
+
+    <p>
+        Visit the
+        <a href="https://www.scoutmotors.com/" target="_blank">
+            Official Scout Motors Website
+        </a>.
+    </p>
+
+    <p>Official vehicle photographs and details belong to Scout Motors.</p>
+
+    <p>© 2026 Scout Motors | Student Website Project</p>
+</footer>
+
+</body>
+</html>
